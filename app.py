@@ -2,7 +2,7 @@ from flask import Flask, render_template, url_for, redirect
 from forms.forms import Questions, QuestionA
 
 app = Flask(__name__)
-
+app.config['SECRET_KEY'] = '453672hhy678'
 
 
 @app.route("/")
