@@ -1,5 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+{% extends "layout.html" %}
+{% block content %}
+<head>
+    <style>
+        h1{
+        color:black;
+        text-align: center;
+        }
+        button {
+            background-color: brown;
+            width: 250px;
+            color: white;
+            font-size: 20px;
+            padding: 15px;
+            text-align: center;
+            margin: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    </style>
 <head>
     <meta charset="UTF-8">
     <title>New SEC REG application</title>
@@ -7,4 +28,5 @@
 <body>
     <h1>This is a tool for determining application of securitisation regulations</h1>
 </body>
+{% endblock %}
 </html>
