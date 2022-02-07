@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Securitisation Guide</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">Securitisation Guide</h1>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('definitions') }}">General Definitions</a></li>
+            <li><a href="{{ url_for('questionA') }}">Securitistion Definition</a></li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

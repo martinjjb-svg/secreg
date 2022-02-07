@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+{% extends "layout.html" %}
+{% block content %}
+<head>
+    <style>
+        h1{
+        color:black;
+        text-align: center;
+        }
+        button {
+            background-color: brown;
+            width: 250px;
+            color: white;
+            font-size: 20px;
+            padding: 15px;
+            text-align: center;
+            margin: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    </style>
 <head>
     <meta charset="UTF-8">
     <title>New SEC REG application</title>
 </head>
 <body>
-    <h1>This is a tool for determining application of securitisation regulations</h1>
+    <h1>Securitisation Regulation - Regulation (EU) 2017/2402 of the European Parliament and of the Council</h1>
+    <p>Securitisation relates to transactions that enable an entity to refinance certain types of financial
+      assets by aggregating the assets into a pool and then tranching the pool to achieve expected loss
+      rates applicable to the exposures by respective tranch. Typically this approach is used in relation to
+      receivables such as residential loans, auto loans, credit cards, leases, other consumer loans and
+      in certain cases various types of business or commercial assets. </p>
 </body>
+{% endblock %}
 </html>

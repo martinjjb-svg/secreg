@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,14 +19,19 @@
   </div>
 </div>
 <div style = "margin-left: 100px;">
-  <h1>Securitisation Regulation - Regulation (EU) 2017/2402 of the European Parliament and of the Council</h1>
-  <p>Securitisation relates to transactions that enable an entity to refinance certain types of financial
-      assets by aggregating the assets into a pool and then tranching the pool to achieve expected loss
-      rates applicable to the exposures by respective tranch. Typically this approach is used in relation to
-      receivables such as residential loans, auto loans, credit cards, leases, other consumer loans and
-      in certain cases various types of business or commercial assets. </p>
+  <p>What are the characteristics of the asset?</p>
 
+  <form method = 'POST'>
+    <!--the below line of code is to do with security-->
+    {{form.hidden_tag()}}
+    {{form.csrf_token}}
+    <!--display comment text and box for submission-->
+    {{form.question2label}}{{form.question2()}}
 
+    <!--the submit box is made-->
+
+    {{form.submit()}}
+  </form>
 </div>
 
 </body>
