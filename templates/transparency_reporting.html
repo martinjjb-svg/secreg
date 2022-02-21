@@ -15,24 +15,26 @@
   <div class="container">
     <h1 class="display-4" style="color:white">Securitisation Regulation</h1>
     <p class="lead" style="color:white">Compliance with requirements. </p>
-    <p class="lead" style="color:white">To determine if the offer will constitute a securitisation
-    within the definition set out in the Securitisation Regulation answer the following questions:</p>
+    <p class="lead" style="color:white">Transparency Reporting</p>
     <p class="lead" style="color:white"></p>
   </div>
 </div>
 <div style = "margin-left: 100px;">
-  <h2>Securitisation is defined in Article 2 of the Securitisation Regulation. There are specific characteristics that
-  determine if the transaction constitutes a securitisation. These are set out below.</h2>
+  <h2>the originator, sponsor or SSPE has, where applicable, made available the information required by Article 7
+      (Transparency requirements for originators, sponsors and SSPEs) of the EU Securitisation Regulation in accordance
+      with the frequency and modalities provided for in Article 7 (Transparency requirements for originators, sponsors
+      and SSPEs) of the EU Securitisation Regulation.</h2>
   <form method = 'POST'>
     <!--the below line of code is to do with security-->
       {{form.hidden_tag()}}
       {{form.csrf_token}}
     <!--display comment text and box for submission-->
-    <p>Is the transaction/scheme a transaction/scheme where the credit risk associated with an exposure or pool of
-      exposures is tranched? (A tranche is “a contractually established segment of the credit risk associated with an exposure or a pool
-      of exposures, where a position in the segment entails a risk of credit loss greater than or less than a position
-      of the same amount in each other segment, without taking account of credit protection provided by third parties
-      directly to the holders of positions in the segment or in other segments.”) </p>
+    <p>Article 7 (Transparency requirements for originators, sponsors and SSPEs) of the EU Securitisation Regulation
+        contains transparency requirements (the “Transparency Requirements”) that require the originator, sponsor and
+        securitisation special purpose entity of a securitisation to make certain prescribed information relating to
+        the Transaction available to investors, competent authorities and, upon request, to potential investors.
+        Article 7 (Transparency requirements for originators, sponsors and SSPEs) also requires that one party is
+        designated as the reporting entity </p>
     {% for subfield in form.question1 %}
       <tr>
         <td>{{ subfield() }}</td>
@@ -40,8 +42,9 @@
       </tr>
     {% endfor %}
     <br>
-    <p>Are payments in the transaction/scheme dependent upon the performance of the exposures or of the
-      pool of exposures?</p>
+    <p>Article 7 (Transparency requirements for originators, sponsors and SSPEs) of the EU Securitisation Regulation
+        also includes ongoing reporting obligations which include quarterly portfolio level disclosure
+        (“Asset Reports”) and quarterly investor reports (“Investor Reports”).</p>
     {% for subfield in form.question2 %}
       <tr>
         <td>{{ subfield() }}</td>
@@ -49,8 +52,9 @@
       </tr>
     {% endfor %}
     <br>
-    <p>Does the subordination of tranches determine the distribution of losses during the ongoing life of the
-      transaction or scheme?</p>
+    <p>Reporting obligations include any inside information relating to the securitisation that the reporting entity
+        is obliged to make public under the Market Abuse Regulation (“Inside Information”), and any significant
+        events (“Significant Events”).</p>
     {% for subfield in form.question3 %}
       <tr>
         <td>{{ subfield() }}</td>
@@ -58,8 +62,10 @@
       </tr>
     {% endfor %}
     <br>
-    <p>Does the transaction constitute a specialised lending transaction ie it has characteristics listed in
-      Article 147(8) of Reg (EU) No 575/2013 (The Capital Requirements Regulation)?</p>
+    <p>The EU Disclosure RTS[81], which came into effect on 23 September 2020, together with the related implementing
+        technical standards which came into effect on the same day, include detailed disclosure templates that are
+        required to be completed with respect to the Asset Reports, Investor Reports, Inside Information and
+        Significant Events.</p>
     {% for subfield in form.question4 %}
       <tr>
         <td>{{ subfield() }}</td>
