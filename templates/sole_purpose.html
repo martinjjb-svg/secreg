@@ -15,24 +15,23 @@
   <div class="container">
     <h1 class="display-4" style="color:white">Securitisation Regulation</h1>
     <p class="lead" style="color:white">Compliance with requirements. </p>
-    <p class="lead" style="color:white">To determine if the offer will constitute a securitisation
-    within the definition set out in the Securitisation Regulation answer the following questions:</p>
+    <p class="lead" style="color:white">To determine if the originator is eligible answer the following:</p>
     <p class="lead" style="color:white"></p>
   </div>
 </div>
 <div style = "margin-left: 100px;">
-  <h2>Securitisation is defined in Article 2 of the Securitisation Regulation. There are specific characteristics that
-  determine if the transaction constitutes a securitisation. These are set out below.</h2>
+  <h2>In order for the originator to be eligible to act as risk retainer it must not have been set up for the sole
+    purpose of the securitisation. There is limited guidance on this but the following tests are applicable.</h2>
   <form method = 'POST'>
     <!--the below line of code is to do with security-->
       {{form.hidden_tag()}}
       {{form.csrf_token}}
     <!--display comment text and box for submission-->
-    <p>Is the transaction/scheme a transaction/scheme where the credit risk associated with an exposure or pool of
-      exposures is tranched? (A tranche is “a contractually established segment of the credit risk associated with an exposure or a pool
-      of exposures, where a position in the segment entails a risk of credit loss greater than or less than a position
-      of the same amount in each other segment, without taking account of credit protection provided by third parties
-      directly to the holders of positions in the segment or in other segments.”) </p>
+    <p>The entity has a business strategy and the capacity to meet payment obligations consistent with a broader
+      business enterprise and involving material support from capital, assets, fees or other income available to the
+      entity, relying neither on the exposures being securitised by that entity, nor on any interests retained or
+      proposed to be retained in accordance with this Regulation, as well as any corresponding income from such
+      exposures and interests as its sole or predominant source of revenue) </p>
     {% for subfield in form.question1 %}
       <tr>
         <td>{{ subfield() }}</td>
@@ -40,8 +39,8 @@
       </tr>
     {% endfor %}
     <br>
-    <p>Are payments in the transaction/scheme dependent upon the performance of the exposures or of the
-      pool of exposures?</p>
+    <p>The responsible decision makers have the required experience to enable the entity to pursue the established
+      business strategy, as well as an adequate corporate governance arrangement.</p>
     {% for subfield in form.question2 %}
       <tr>
         <td>{{ subfield() }}</td>
@@ -49,8 +48,7 @@
       </tr>
     {% endfor %}
     <br>
-    <p>Does the subordination of tranches determine the distribution of losses during the ongoing life of the
-      transaction or scheme?</p>
+    <p>The responsible decision makers are pursuing a business strategy beyond the securitisation of the relevant exposures</p>
     {% for subfield in form.question3 %}
       <tr>
         <td>{{ subfield() }}</td>
@@ -58,8 +56,8 @@
       </tr>
     {% endfor %}
     <br>
-    <p>Does the transaction constitute a specialised lending transaction ie it has characteristics listed in
-      Article 147(8) of Reg (EU) No 575/2013 (The Capital Requirements Regulation)?</p>
+    <p>The entity has access to capital, fees and revenue in addition to that rising from the seuritisation of the
+    current exposures.</p>
     {% for subfield in form.question4 %}
       <tr>
         <td>{{ subfield() }}</td>
