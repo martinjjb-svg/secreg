@@ -20,8 +20,9 @@
   </div>
 </div>
 <div style = "margin-left: 100px;">
-  <h2>In order for the originator to be eligible to act as risk retainer it must not have been set up for the sole
-    purpose of the securitisation. There is limited guidance on this but the following tests are applicable.</h2>
+  <h4>In order for the originator to be eligible to act as risk retainer it must not have been set up for the sole
+    purpose of the securitisation. There is limited guidance on this but the following tests are applicable. Confirm
+  if the following statements concerning the entity are true or not.</h4>
   <form method = 'POST'>
     <!--the below line of code is to do with security-->
       {{form.hidden_tag()}}
@@ -31,7 +32,9 @@
       business enterprise and involving material support from capital, assets, fees or other income available to the
       entity, relying neither on the exposures being securitised by that entity, nor on any interests retained or
       proposed to be retained in accordance with this Regulation, as well as any corresponding income from such
-      exposures and interests as its sole or predominant source of revenue) </p>
+      exposures and interests as its sole or predominant source of revenue. (Identify the wider business strategy and
+    the sources of capital and income available to the entity that do not arise from the exposures or securitisation
+    funding.)</p>
     {% for subfield in form.question1 %}
       <tr>
         <td>{{ subfield() }}</td>
@@ -40,7 +43,8 @@
     {% endfor %}
     <br>
     <p>The responsible decision makers have the required experience to enable the entity to pursue the established
-      business strategy, as well as an adequate corporate governance arrangement.</p>
+      business strategy, as well as having an adequate corporate governance arrangement in place. (Identify names and
+    experience of directors and other officers and employees managing and operating the business.)</p>
     {% for subfield in form.question2 %}
       <tr>
         <td>{{ subfield() }}</td>
@@ -48,7 +52,10 @@
       </tr>
     {% endfor %}
     <br>
-    <p>The responsible decision makers are pursuing a business strategy beyond the securitisation of the relevant exposures</p>
+    <p>The entity is not a special purpose vehicle established for the purpose of securitising the current exposures and
+      the responsible decision makers are actively pursuing a business strategy which is beyond the securitisation of
+      the relevant exposures. (Identify if the entity was established prior to the securitisation and the activities other
+    than relating to the securitisation that it has pursued or is pursuing.)</p>
     {% for subfield in form.question3 %}
       <tr>
         <td>{{ subfield() }}</td>
@@ -57,7 +64,8 @@
     {% endfor %}
     <br>
     <p>The entity has access to capital, fees and revenue in addition to that rising from the seuritisation of the
-    current exposures.</p>
+    current exposures. (Identify an credit lines, overdrafts and capital instruments or sources of revenue that the
+    entity has access to.) </p>
     {% for subfield in form.question4 %}
       <tr>
         <td>{{ subfield() }}</td>

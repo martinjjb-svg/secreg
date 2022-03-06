@@ -10,8 +10,6 @@
 </head>
 <body>
 
-<!-- the below block of code uses classes generated from flasks forms -->
-<!--I think the POST method means that information is received from the user but not completely sure about this yet-->
 <div class="jumbotron jumbotron-fluid" style="background-color:#A68446">
   <div class="container">
     <h1 class="display-4" style="color:white">Securitisation Regulation</h1>
@@ -20,22 +18,9 @@
 </div>
 <div style = "margin-left: 100px;">
   <p>{{heading}}</p>
-  <h6>{{heading2}}</h6>
+  <p>The transaction is not compliant with the applicable requirements of the Regulations as applicable to this
+      Securitisation. Review the answers provided and discuss with legal advisor.</p>
 
-  <form method = 'POST'>
-    <!--the below line of code is to do with security-->
-    {{form.hidden_tag()}}
-    {{form.csrf_token}}
-    <!--display comment text and box for submission-->
-    {{form.question.label}}{{form.question()}}
-
-    <!--the submit box is made-->
-
-    {{form.submit()}}
-  </form>
-
-  <p>{{heading3}}</p>
-  <p>{{heading4}}</p>
 
 </div>
 

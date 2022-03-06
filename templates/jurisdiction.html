@@ -3,7 +3,7 @@
 <head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin=anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin=anonymous></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </head>
@@ -14,50 +14,65 @@
 <div class="jumbotron jumbotron-fluid" style="background-color:#A68446">
   <div class="container">
     <h1 class="display-4" style="color:white">Securitisation Regulation</h1>
-    <p class="lead" style="color:white">Identifying the appropriate treatment for the offering</p>
+    <p class="lead" style="color:white">Compliance with requirements. </p>
+    <p class="lead" style="color:white">To determine if the securitisation is subject to the requirements set out
+    within the EU Securitisation Regulation or the UK Securitisation Regulation or both answer the following questions:</p>
+    <p class="lead" style="color:white"></p>
   </div>
 </div>
 <div style = "margin-left: 100px;">
-    <h2>Securitisation Regulations - Regulation (EU) 2017/2402 of the European Parliament and of the Council and the UK
-        Securitisation Regulation (together the "Regulations)</h2>
+  <h2>A securitisation will be subject to the Securitisation Regulations depending on the jurisdiction of the originator,
+  the sponsor and the SSPE. It is also relevant for an investor where that investor is established. Relevant considerations
+      and definitions are set out below.</h2>
+  <form method = 'POST'>
+    <!--the below line of code is to do with security-->
+      {{form.hidden_tag()}}
+      {{form.csrf_token}}
+    <!--display comment text and box for submission-->
+    <p style="color:brown"><strong>Does the transaction involve an originator, sponsor or SSPE established in the EU? </strong></p>
+    {% for subfield in form.question1 %}
+      <tr>
+        <td>{{ subfield() }}</td>
+        <td>{{ subfield.label }}</td>
+      </tr>
+    {% endfor %}
     <br>
-    <h3>1.DEFINITIONS</h3>
-
-    <p><strong>“EU CRR”</strong> means Regulation (EU) No. 575/2013 of the European Parliament and of the Council of 21 June 2013 on
-        prudential requirements for credit institutions and investment firms and amending Regulation (EU) No. 648/2012;</p>
-    <p><strong>“EU CRR Risk Retention RTS ”</strong> means the regulatory technical standards relating to risk retention in relation to
-        securitisations for the purposes of the EU CRR, published and adopted by the European Commission on 13 June 2014
-        in Delegated Regulation (EU) No 625/2014;</p>
-    <p><strong>“EU Disclosure RTS”</strong> means Commission Delegated Regulation (EU) 2020/1224 of 16 October 2019 supplementing
-        Regulation (EU) 2017/2402 of the European Parliament and of the Council with regard to regulatory technical
-        standards specifying the information and the details of a securitisation to be made available by the
-        originator, sponsor and SSPE;</p>
-    <p><strong>“EU SR Risk Retention RTS – July 2018 draft”</strong> means the draft EU Disclosure RTS issued by the EBA dated 31 July
-        2018 but which were replaced by the EU SR Risk Retention Disclosure RTS – June 2021 draft;</p>
-    <p><strong>“EU SR Risk Retention RTS – June 2021 draft”</strong> means the draft EU SR Risk Retention RTS issued by the EBA for
-        consultation on 30 June 2021;</p>
-    <p><strong>“EU SR Risk Retention RTS ”[2]</strong> means regulatory technical standards specifying the requirements for originators,
-        sponsors and original lenders relating to risk retention pursuant to Article 6(7) of the EU Securitisation
-        Regulation;</p>
-    <p><strong>“EU Securitisation Regulation”</strong> means Regulation (EU) No 2017/2042 of the European Parliament and of the Council
-        of 12 December 2017 laying down a general framework for securitisation and creating a specific framework for
-        simple, transparent and standardised securitisation;</p>
-
-    <p><strong>“Retention Requirement”</strong> means the obligation imposed on the originator, sponsor or original lender of a
-    securitisation by Article 6 (Risk retention)[5] of the EU Securitisation Regulation to retain on an ongoing basis
-    a material net economic interest in the securitisation of not less than five per cent;</p>
-
-    <p><strong>“Transaction”</strong> means the proposed transaction the subject of this confirmation certificate (The Transaction);</p>
-    <p><strong>“UK CRR”</strong> means [   ];</p>
-    <p><strong>“UK CRR TS” </strong> means [   ];</p>
-    <p><strong>“UK Disclosure TS” </strong> means [   ];</p>
-    <p><strong>“UK Retention TS”[7] </strong> means [   ];</p>
-    <p><strong>“UK Securitisation Regulation” </strong> means [   ].</p>
-    <h2>Definitions relating to the risk retention obligation</h2>
-    <p><strong>"original lender"</strong> means an entity which, itself or through related entities, directly or indirectly, concluded the
+    <p style="color:brown"><strong>Does the transaction involve an originator, sponsor or SSPE established in the UK? </strong></p>
+    {% for subfield in form.question2 %}
+      <tr>
+        <td>{{ subfield() }}</td>
+        <td>{{ subfield.label }}</td>
+      </tr>
+    {% endfor %}
+    <br>
+    <p style="color:brown"><strong>Is any investor an institutional investor in the EU? </strong></p>
+    {% for subfield in form.question3 %}
+      <tr>
+        <td>{{ subfield() }}</td>
+        <td>{{ subfield.label }}</td>
+      </tr>
+    {% endfor %}
+    <br>
+    <p style="color:brown"><strong>Is any investor an institutional investor in the UK? </strong></p>
+    {% for subfield in form.question4 %}
+      <tr>
+        <td>{{ subfield() }}</td>
+        <td>{{ subfield.label }}</td>
+      </tr>
+    {% endfor %}
+    <br>
+        <!--the submit box is made-->
+    {{form.submit()}}
+  </form>
+  <br>
+  <p>The Regulation is applicable based on the jurisdiction of the parties taking part in implementing the securitisation
+  or due to the jurisdiction in which an investor is based. The underlying exposures will have been created by an original lender
+  that may or may not be taking part in the securitisation itself.</p>
+  <p><strong>"original lender"</strong> means an entity which, itself or through related entities, directly or indirectly, concluded the
     original agreement which created the obligations or potential obligations of the debtor or potential debtor giving
     rise to the exposures being securitised</p>
-    <p><strong>"originator"</strong> means an entity which is :</p>
+  <p>The meanings for originator, sponsor and SSPE are as follows.</p>
+  <p><strong>"originator"</strong> means an entity which is :</p>
     <p><strong>"a limb (a)  originator"</strong> - itself or through related entities, it directly or indirectly, was involved in the
       original agreement which created the obligations or potential obligations of the debtor or potential debtor
       giving rise to the exposures being securitised; or </p>
@@ -117,15 +132,6 @@
     defined in section 237(3) of that Act;
     (g)  a CRR firm as defined by Article 4(1)(2A) of Regulation (EU) No 575/20;</p>
   <p><strong>‘investor’ </strong>means a natural or legal person holding a securitisation position;</p>
-    <h3>2.INTERPRETATION</h3>
-    <p>In this site:</p>
-    <p>(a) capitalised terms which are not defined above shall have the meanings given to them in the Master Framework
-        Agreement;</p>
-    <p>(b) terms used should be interpreted in accordance with the UK Securitisation Regulation [or, as the case may be,
-        the EU Securitisation Regulation]; and</p>
-    <p>(c) references to any primary or secondary legislation are to it as from time to time supplemented and amended up
-        to the date of this Memorandum.</p>
-
 
 </div>
 

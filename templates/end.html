@@ -20,22 +20,11 @@
 </div>
 <div style = "margin-left: 100px;">
   <p>{{heading}}</p>
-  <h6>{{heading2}}</h6>
-
-  <form method = 'POST'>
-    <!--the below line of code is to do with security-->
-    {{form.hidden_tag()}}
-    {{form.csrf_token}}
-    <!--display comment text and box for submission-->
-    {{form.question.label}}{{form.question()}}
-
-    <!--the submit box is made-->
-
-    {{form.submit()}}
-  </form>
-
-  <p>{{heading3}}</p>
-  <p>{{heading4}}</p>
+  <p>Neither the UK Securitisation Regulation nor the EU Securitisation Regulation applies.</p>
+    <p> This is because the transaction either does not constitute a securitisation for the purposes of the
+        EU Securitisation Regulation or the UK Securitisation Regulation; or </p>
+    <p> none of the originator, sponsor or SSPE or any applicable investor is
+      established in the UK or EU and therefore the regulatory regime is not applicable. </p>
 
 </div>
 

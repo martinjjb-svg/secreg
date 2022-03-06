@@ -19,7 +19,7 @@ class Sec_def(FlaskForm):
     submit = SubmitField('submit')
 
 
-class Form_due_dil(FlaskForm):
+class Form_jurisdiction(FlaskForm):
     question1 = RadioField("""question_1""",
                            choices=[('yes', 'yes'), ('no', 'no')],
                            validators=[DataRequired()])
@@ -35,17 +35,8 @@ class Form_due_dil(FlaskForm):
     submit = SubmitField('submit')
 
 
-class Form_inv(FlaskForm):
-    question = SelectField("Choose which applies",
-                           choices=[('a', '(a) investors are based in the EU'),
-                                    ('b', '(b) investors are based in the UK'),
-                                    ('c', '(c) investors may be in the UK or the EU'),
-                                    ('d', '(d) investors not in the UK or the EU')], validators=[DataRequired()])
-    submit = SubmitField('submit')
-
-
 class Form_risk_retainer1(FlaskForm):
-    question = SelectField("Choose which applies",
+    question = SelectField("Specify type of Risk Retainer based on definitions from previous page.",
                            choices=[('a', '(a) sponsor'),
                                     ('b', '(b) original lender'),
                                     ('c', '(c) limb(a) originator'),
@@ -56,7 +47,7 @@ class Form_risk_retainer1(FlaskForm):
 
 
 class Form_risk_retainer2(FlaskForm):
-    question = SelectField("Choose which applies",
+    question = SelectField("Specify type of Risk Retainer based on definitions from previous page.",
                            choices=[('a', '(a) sponsor'),
                                     ('b', '(b) original lender'),
                                     ('c', '(c) limb(a) originator'),
@@ -67,7 +58,7 @@ class Form_risk_retainer2(FlaskForm):
 
 
 class Form_risk_retainer3(FlaskForm):
-    question = SelectField("Choose which applies",
+    question = SelectField("Specify type of Risk Retainer based on definitions from previous page.",
                            choices=[('a', '(a) sponsor'),
                                     ('b', '(b) original lender'),
                                     ('c', '(c) limb(a) originator'),
@@ -94,12 +85,19 @@ class Form_sole_purpose(FlaskForm):
 
 
 class Form_retention_type(FlaskForm):
-    question = SelectField("Choose which applies",
-                           choices=[('a', '(a) 5% of nominal value of each tranche sold'),
-                                    ('b', '(b) Revolving - 5% of nominal value of each of the securitised exposures'),
-                                    ('c', '(c) Random selection - 5% of nominal value of the securitised exposures'),
-                                    ('d', '(d) First loss tranche or tranches with same of more severe risk profile of at least 5%'),
-                                    ('e', '(e) First loss exposure of not less than 5% of every securitised exposure ')], validators=[DataRequired()])
+    question = SelectField("Only the following shall qualify as a retention of a material net economic interest of not"
+                           " less than 5%",
+                           choices=[('a', '(a) Risk Retainer will hold 5% of nominal value of each tranche sold'),
+                                    ('b', '(b) In the case of revolving securitisations or securitisations of revolving'
+                                          ' exposures - Risk Retainer will hold 5% of nominal value of each of the '
+                                          'securitised exposures'),
+                                    ('c', '(c) Risk Retainer will hold the retention of randomly selected exposures,'
+                                          ' equivalent to not less than 5% of nominal value of the securitised'
+                                          ' exposures'),
+                                    ('d', '(d) Risk Retainer will hold first loss tranche or tranches with same of more'
+                                          ' severe risk profile of at least 5%'),
+                                    ('e', '(e) Risk Retainer will hold first loss exposure of not less than 5% of every'
+                                          ' securitised exposure ')], validators=[DataRequired()])
     submit = SubmitField('submit')
 
 
@@ -114,6 +112,9 @@ class Form_transparency_reporting(FlaskForm):
                            choices=[('yes', 'yes'), ('no', 'no')],
                            validators=[DataRequired()])
     question4 = RadioField("""question_4""",
+                           choices=[('yes', 'yes'), ('no', 'no')],
+                           validators=[DataRequired()])
+    question5 = RadioField("""question_5""",
                            choices=[('yes', 'yes'), ('no', 'no')],
                            validators=[DataRequired()])
     submit = SubmitField('submit')
