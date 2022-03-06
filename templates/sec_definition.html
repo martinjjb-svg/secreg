@@ -21,18 +21,19 @@
   </div>
 </div>
 <div style = "margin-left: 100px;">
-  <h2>Securitisation is defined in Article 2 of the Securitisation Regulation. There are specific characteristics that
+  <h2>There are specific characteristics that
   determine if the transaction constitutes a securitisation. These are set out below.</h2>
   <form method = 'POST'>
     <!--the below line of code is to do with security-->
       {{form.hidden_tag()}}
       {{form.csrf_token}}
     <!--display comment text and box for submission-->
-    <p>Is the transaction/scheme a transaction/scheme where the credit risk associated with an exposure or pool of
-      exposures is tranched? (A tranche is “a contractually established segment of the credit risk associated with an exposure or a pool
-      of exposures, where a position in the segment entails a risk of credit loss greater than or less than a position
-      of the same amount in each other segment, without taking account of credit protection provided by third parties
-      directly to the holders of positions in the segment or in other segments.”) </p>
+    <p style="color:brown"><strong>Is the transaction a transaction or scheme where the credit risk associated with an exposure or
+      pool of exposures is tranched? </strong></p><p>(A tranche is “a contractually established segment of the credit risk associated
+    with an exposure or a pool of exposures (typically loans or other financial receivables or claims), where a position
+    in the segment entails a risk of credit loss greater than or less than a position of the same amount in each other
+    segment, without taking account of credit protection provided by third parties directly to the holders of positions
+    in the segment or in other segments.”) </p>
     {% for subfield in form.question1 %}
       <tr>
         <td>{{ subfield() }}</td>
@@ -40,8 +41,11 @@
       </tr>
     {% endfor %}
     <br>
-    <p>Are payments in the transaction/scheme dependent upon the performance of the exposures or of the
-      pool of exposures?</p>
+    <p style="color:brown"><strong>Are payments in the transaction/scheme dependent upon the performance of the exposures or of the
+      pool of exposures? </strong></p><p>This will be the case where, for example, the ability of the issuer to pay interest on its
+      obligations is dependent on receiving payments that will fall due in respect of the assets it has acquired. This
+    is most clear in relation to receivables pools where the payments of interest and principle from underlying obligors
+    are used to pay the interest and principal that will become due on the notes/loans funding the purchase.</p>
     {% for subfield in form.question2 %}
       <tr>
         <td>{{ subfield() }}</td>
@@ -49,8 +53,12 @@
       </tr>
     {% endfor %}
     <br>
-    <p>Does the subordination of tranches determine the distribution of losses during the ongoing life of the
-      transaction or scheme?</p>
+    <p style="color:brown"><strong>Does the subordination of tranches determine the distribution of losses during the ongoing life of the
+      transaction or scheme? </strong></p><p>This will typically apply where the structure applies a payment waterfall, a contractual
+      priority of payments such that amounts available to the issuer are contractually applied first to more senior
+    tranches of debt on each payment date and then applied to each subsequent tranche by virtue of subordination
+    to the extent that amounts are available to make the payments. A failure to pay a subordinated tranche due to
+    insufficient cashflow from the acquired assets will not be an event of default on the structure as a whole.</p>
     {% for subfield in form.question3 %}
       <tr>
         <td>{{ subfield() }}</td>
@@ -58,8 +66,19 @@
       </tr>
     {% endfor %}
     <br>
-    <p>Does the transaction constitute a specialised lending transaction ie it has characteristics listed in
-      Article 147(8) of Reg (EU) No 575/2013 (The Capital Requirements Regulation)?</p>
+    <p style="color:brown"><strong>Does the transaction constitute a specialised lending transaction ie it has characteristics listed in
+      Article 147(8) of Reg (EU) No 575/2013 (The Capital Requirements Regulation)? </strong></p><p> Specialised lending exposures include
+      commercial real estate, project finance, ship and aircraft, and the like, which are provided by sophisticated lenders
+      using structures which might be caught due to the structure involving the characteristics of tranching, payments depending
+      upon performance, and subordination. Article 147(8) specifies the following characteristics: 1."the exposure is to
+      an entity which was created specifically to finance or operate physical assets or is an economically comparable
+      exposure; 2. the contractual arrangements give the lender a substantial degree of control over the assets and the
+      income that they generate; 3. the primary source of repayment of the obligation is the income generated by the
+      assets being financed, rather than the independent capacity of a broader commercial enterprise". Limb (c) of the
+      definition emphasises the related recital (6) (which itself repeats the final sentence of recital (50) of the CRR):
+      "An exposure that creates a direct payment obligation for a transaction or scheme used to finance or operate
+      physical assets should not be considered an exposure to a securitisation, even if the transaction or scheme has
+      payment obligations of different seniority".</p>
     {% for subfield in form.question4 %}
       <tr>
         <td>{{ subfield() }}</td>

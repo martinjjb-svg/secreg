@@ -2,68 +2,72 @@
 <html lang="en">
 {% extends "layout.html" %}
 {% block content %}
+<!DOCTYPE html>
+<html>
 <head>
-    <style>
-        h1{
-        color:black;
-        text-align: center;
-        }
-        button {
-            background-color: brown;
-            width: 250px;
-            color: white;
-            font-size: 20px;
-            padding: 15px;
-            text-align: center;
-            margin: 10px;
-            margin-left: auto;
-            margin-right: auto;
-            display: block;
-        }
-    </style>
-<head>
-    <meta charset="UTF-8">
-    <title>New SEC REG application</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin=anonymous></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </head>
 <body>
-    <h1>Securitisation Regulation - Regulation (EU) 2017/2402 of the European Parliament and of the Council and the UK
-    Securitisation Regulation</h1>
-    <p>Securitisation relates to a form of financing whereby an entity ("Originator" or "Seller")
-        holds financial claims usually in the form of rights to payment of an outstanding debt ("receivables")
-        transfers the rights to those claims usually through a sale ("true sale") to a company or other legal
-        entity set up for the purpose of holding the claims ("securitisation special purpose entity") which
+
+<!-- the below block of code uses classes generated from flasks forms -->
+<!--I think the POST method means that information is received from the user but not completely sure about this yet-->
+<div class="jumbotron jumbotron-fluid" style="background-color:#A68446">
+  <div class="container">
+    <h1 class="display-4" style="color:white">Securitisation Regulation</h1>
+    <p class="lead" style="color:white">Compliance with requirements. </p>
+    <p class="lead" style="color:white">This guide determines if your transaction is a securitisation and if it
+        is subject to the requirements set out within the EU Securitisation Regulation or the UK Securitisation
+        Regulation or both. If the transaction is subject to the Regulations the guide takes you through the
+        process of determingin if it is compliant with the current Regulations.</p>
+    <p class="lead" style="color:white"></p>
+  </div>
+</div>
+<div style = "margin-left: 100px;">
+    <h4>Securitisation Regulation refers to the application of the Regulation (EU) 2017/2402 of the European Parliament
+         and of the Council in respect of securitisations in the EU and the UK Securitisation Regulation in respect of
+    securitisations in the UK (together the "Regulations").</h4>
+    <p>Securitisation relates to a form of financing whereby an entity ("originator" or "sponsor") establishes a structure
+        in which financial claims, usually in the form of rights to payment of an outstanding debt ("receivables") are
+        transferred from the originator or original lender, usually through a sale ("true sale") to a company or other legal
+        entity set up for the purpose of holding the claims ("securitisation special purpose entity" or "SSPE"). The SSPE
         aggregates the assets into a collateral pool ("exposures") and then issues notes to fund the purchase.
-        The notes are tranched into tiers with the highest tier having first claim on the pool of exposures
+        The notes are tranched into tiers with the highest tier having first claim on the payments arising from the exposures
         and the second tier and subsequent tiers being subordinated to each higher tier, therefore having the next
-        or subsequent claim after higher claims are satisfied and until the return from the pool of exposures is
+        or subsequent claim after higher claims are satisfied until payments from the pool of exposures is
         exhausted. The default and expected loss rates applicable to the exposures determine the amount of
         subordination that is required in order to achieve a relevant credit rating applied to the respective
         tranche.</p>
     <p>Typically, this approach is used in relation to receivables such as residential loans, auto loans,
         credit cards, leases, consumer loans and in certain cases various types of business or commercial assets.</p>
 
-    <p>This form of financing is subject to a number of regulatory requirements. In order to confirm the regulatory
-    requirements are complied with follow the procedure set out below.</p>
+    <p>This form of financing is subject to a number of regulatory requirements. In order to confirm if the regulatory
+    requirements are complied with it is possible to follow the procedure set out below.</p>
 
     <p>1. Determine if the transaction or scheme is a securitisation within the regulatory definition.</p>
 
-    <p>2. If it is a securitisation determine the relevant regulatory due diligence requirements.</p>
+    <p>2. If it is a securitisation determine if the originator, sponsor or SSPE are subject to the Regulations.</p>
 
-    <p>3. Consider where the investors are based and the regulatory regime that applies based on jurisdiction of
-    relevant participants.</p>
+    <p>3. Consider where the investors are based and if they are subject to the Regulations based on the jurisdiction of
+    the relevant investors.</p>
 
-    <p>4. Depending on the applicable regulations confirm the entity that will act as the risk retainer.</p>
+    <p>4. If the securitisation is subject to the Regulations check that it complies with the applicable regulatory
+        requirements requiring an appropriate entity to retain a required net material economic interest in the
+        securitisation.</p>
 
-    <p>5. Ensure the risk retention entity complies with relevant regulatory requirements</p>
+    <p>5. Check that the risk retention entity complies with eligibility requirements applicable nder the Regulations.</p>
 
-    <p>6. Confirm the form of risk retention and that this complies with relevant requirements.</p>
+    <p>6. Confirm the form of risk retention instrument and that this complies with relevant requirements.</p>
 
-    <p>7. Confirm reporting entity and compliance with transparency and reporting requirements.</p>
+    <p>7. Confirm reporting entity and compliance with credit granting and transparency and reporting requirements.</p>
 
-    <p>8. Certify the information input into this site is correct and subject to verification and normal
-        assumptions and reservations receive confirmation that the regulatory risk retention requirements are complied
+    <p>8. If securitisation meets all above requirements and information input into this site is correct, subject
+        to verification and normal assumptions and reservations the regulatory risk retention requirements are complied
         with to the extent of the available guidance. </p>
-
+</div>
 </body>
 {% endblock %}
 </html>

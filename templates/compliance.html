@@ -20,22 +20,9 @@
 </div>
 <div style = "margin-left: 100px;">
   <p>{{heading}}</p>
-  <h6>{{heading2}}</h6>
+  <p>The transaction complies with the requirements of the UK Securitisation Regulation or the EU Securitisation
+      Regulation as such applies to the transaction.</p>
 
-  <form method = 'POST'>
-    <!--the below line of code is to do with security-->
-    {{form.hidden_tag()}}
-    {{form.csrf_token}}
-    <!--display comment text and box for submission-->
-    {{form.question.label}}{{form.question()}}
-
-    <!--the submit box is made-->
-
-    {{form.submit()}}
-  </form>
-
-  <p>{{heading3}}</p>
-  <p>{{heading4}}</p>
 
 </div>
 
