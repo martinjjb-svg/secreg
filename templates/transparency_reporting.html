@@ -30,25 +30,13 @@
       {{form.hidden_tag()}}
       {{form.csrf_token}}
     <!--display comment text and box for submission-->
-    <p>Where the originator or original lender established in the Union is not a credit institution or an investment
-        firm as defined in points (1) and (2) of Article 4(1) of Regulation (EU) No 575/2013[23], confirm the originator or
-        original lender grants all the credits giving rise to the underlying exposures on the basis of sound and
-        well-defined criteria and clearly established processes for approving, amending, renewing and financing those
-        credits and has effective systems in place to apply those criteria and processes in accordance with Article 9(1)
-        of the EU Securitisation Regulation;</p>
+    <p>The originator or original lender grants all the credits giving rise to the underlying exposures on the basis of
+        sound and well-defined criteria and clearly established processes for approving, amending, renewing and financing
+        those credits and has effective systems in place to apply those criteria and processes, (i) where
+        established in the EU, in accordance with Article 9(1) of the EU Securitisation Regulation or (ii) where the
+        originator or original lender is established in a third country, in order to ensure that credit-granting is
+        based on a thorough assessment of the obligor’s creditworthiness;</p>
     {% for subfield in form.question1 %}
-      <tr>
-        <td>{{ subfield() }}</td>
-        <td>{{ subfield.label }}</td>
-      </tr>
-    {% endfor %}
-    <br>
-    <p>Where the originator or original lender is established in a third country, confirm the originator or original lender
-        grants all the credits giving rise to the underlying exposures on the basis of sound and well-defined criteria
-        and clearly established processes for approving, amending, renewing and financing those credits and has
-        effective systems in place to apply those criteria and processes to ensure that credit-granting is based on a
-        thorough assessment of the obligor’s creditworthiness.</p>
-    {% for subfield in form.question2 %}
       <tr>
         <td>{{ subfield() }}</td>
         <td>{{ subfield.label }}</td>
@@ -58,7 +46,7 @@
     <p>Confirm that details of the Risk Retainer and the nature of the ongoing risk retention is disclosed to
         institutional investors in accordance with Article 7 (Transparency requirements for originators, sponsors and
         SSPEs) of the EU Securitisation Regulation</p>
-    {% for subfield in form.question3 %}
+    {% for subfield in form.question2 %}
       <tr>
         <td>{{ subfield() }}</td>
         <td>{{ subfield.label }}</td>
@@ -68,6 +56,19 @@
     <p>Confirm that the originator, sponsor and SSPE have designated one party as the reporting entity and that entity
         will make certain prescribed information relating to the Transaction available to investors, competent
         authorities and, upon request, to potential investors.</p>
+    {% for subfield in form.question3 %}
+      <tr>
+        <td>{{ subfield() }}</td>
+        <td>{{ subfield.label }}</td>
+      </tr>
+    {% endfor %}
+    <br>
+    <p>Confirm information that will be made available to investors by way of ongoing reporting obligations
+        includes quarterly portfolio level disclosure (“Asset Reports”) and quarterly investor reports (“Investor Reports”)
+        inside information relating to the securitisation that the reporting entity is obliged to make public under the
+        Market Abuse Regulation (“Inside Information”), and any significant events (“Significant Events”) in accordance
+        with the detailed disclosure templates under the EU Disclosure RTS[81], which came into effect on 23 September 2020,
+        together with the related implementing technical standards.</p>
     {% for subfield in form.question4 %}
       <tr>
         <td>{{ subfield() }}</td>
@@ -75,12 +76,8 @@
       </tr>
     {% endfor %}
     <br>
-    <p> Confirm information that will be made available to investors by way of ongoing reporting obligations
-        includes quarterly portfolio level disclosure (“Asset Reports”) and quarterly investor reports (“Investor Reports”)
-        inside information relating to the securitisation that the reporting entity is obliged to make public under the
-        Market Abuse Regulation (“Inside Information”), and any significant events (“Significant Events”) in accordance
-        with the detailed disclosure templates under the EU Disclosure RTS[81], which came into effect on 23 September 2020,
-        together with the related implementing technical standards.</p>
+    <p> Confirm that the securitisation has been, or will be filed with the relevant Securitisation Repository using the
+        standardised reporting format.</p>
     {% for subfield in form.question5 %}
       <tr>
         <td>{{ subfield() }}</td>
